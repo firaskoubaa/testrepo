@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block body %}
+	
+
+<!--- Main project -->
+<div class="projects_section">
+	<div class="all_projects_title">
+		Project 1: <br  class="mobile_media_br to_be_hidden"> Bookshelf app
+	</div>
+	<div class="intro">
+		<div class="project_intro_text" >
+			<p> This application is about creating a shelf for your favorite books. It is your own personal library.</p>
+			<p> Using Google Books API's, the most relevant books for your search will appear in the following table (surrounded with red borders).
+				You may choose the book that you want and add it to the bookshelf (it will be stored in the Database and displayed in the table surrounded with green borders).</p>
+			<p>Notice: This search presents only the first 10 books relevant to your search. It is based on the book's name. You can also only store 10 books (adjustable value) in the bookshelf.
+				Further enhancements are planned (all the relevant books, search based on the author, year of publishing...).</p>
+		</div>
+		<div class="search_bar">
+			<form >
+				<input id="searched_keywords" name="searched_keywords" type="text" placeholder="Enter the book's name ...">
+				<input id="search_submit_button" type="submit" value="Search">
+			</form>
+		</div>
+		<div id="search_status">{{search_status}}</div>
+		<div id="no_book_found">
+			There is no book registered at Google Books database with the name '{{searched_book_name}}'
+		</div>
+		<table id="empty_bs_table">
+			<caption>Searched book table</caption>
+			<tr>
+				<th>Number</th>
+				<th>Cover</th>
+				<th>Title</th>
+				<th>Subtitle</th>
+				<th>Authors</th>
+				<th>Publish Date</th>
+				<th>Price (€)</th>
+				<th>Action</th>			  
+			</tr>
+			<tr>
+				<td colspan="8">The search table is now empty. Lunch a search and the results will be displayed in this table</td>
+			</tr>
+		</table>	
+
+		<table id="book_search_table">
+			<caption>Searched book table</caption>
+			<tr>
+				<th>Number</th>
+				<th>Cover</th>
+				<th>Title</th>
+				<th>Subtitle</th>
+				<th>Authors</th>
+				<th>Publish Date</th>
+				<th>Price (€)</th>
+				<th>Action</th>			  
+			</tr>
+			
+			{% for row in reasearch_tab %}
+			<tr>
+				<td>{{row.7}}</td>
+				<td> <a href=" {{row.6}}" target="_blank"> <img src="{{row.0}}" alt="Book Cover"></a> </td> 
+				<td>{{row.1}}</td>
+				<td>{{row.2}}</td>
+				<td>{{row.3}}</td>
+				<td>{{row.4}}</td>
+				<td>{{row.5}}</td>
+				<td class="action_row"> 
+					<div>						
+						<a href="{{row.6}}" target="_blank" class="visit_a"> 
+							<input class="visit_button" type="submit" value="VISIT"> 
+						</a>
+						<form action="add/" method="POST"  class="add_form" 
+						onsubmit="if (document.getElementById('biggest_sb_id10').textContent == 10)
+						{alert('The database is full (10 books). You need to delete one book at least if you want to add a new book to the bookshelf.')};"> {% csrf_token %}
+							<input type="text" class="to_be_hidden" name="book_to_add_id" value="{{row.7}}">
+							<input class="add_button" type="submit" value="ADD">
+						</form>
+					</div>
+				</td>
+			</tr>
+			{% endfor  %}
+		
+		</table>	
+
+		<table id="bookshelf_tab">
+			<caption>The bookshelf - personal library</caption>
+			<tr>
+				<th>Number</th>
+				<th>Cover</th>
+				<th>Title</th>
+				<th>Subtitle</th>
+				<th>Authors</th>
+				<th>Publish Date</th>
+				<th>Price (€)</th>
+				<th>Action</th>			  
+			</tr>		
+
+			{% for book in bookshelf_objects %}
+			<tr>
+				<td id="biggest_sb_id{{book.id}}">{{book.id}}</td>
+				<td><a href=" {{book.cover}}" target="_blank"> <img src="{{book.cover}}" alt="Book Cover"> </a> </td>
+				<td>{{book.title}}</td>
+				<td>{{book.subtitle}}</td>
+				<td>{{book.authors}}</td>
+				<td>{{book.publishedDate}}</td>
+				<td>{{book.price}}</td>
+				<!-- <td id="action_row"> <a href="{{book.7}}" target="_blank"> <input class="visit_button" type="submit" value="VISIT"> </a> <input class="delete_button" id="1{{book.0}}" onclick="do_ajax(this.id)" type="submit" value="DELETE"></td> -->
+				<td class="action_row">
+					<div>						
+						<a href="{{book.previewlink}}" target="_blank" class="visit_a"> 
+							<input class="visit_button" type="submit" value="VISIT"> 
+						</a>
+						<form action="delete/" method="POST"  class="delete_form"> {% csrf_token %}
+							<input type="text" class="to_be_hidden" name="book_to_delete_id" value="{{book.id}}">
+							<input class="delete_button" type="submit" value="DELETE" onclick="return confirm('Are you sure that you want to delete this book?');">
+						</form>
+					</div>
+				</td>
+			</tr>
+			{% endfor  %}
+		
+		</table>	
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Firas Koubaa Website</title>
+    <link href="/static/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" sizes="16x16"/>
+</head>
+
+<body>
+<!-- Navigation bar -->
+<nav class="navigationbar">
+	<a href="/"><img class="logo_image" src="/static/img/logo.png"></a>
+	<ul class="navigationbar_items">		
+		<li class="navigationbar_1item" > <a href="/">Home</a> </li>
+		<li class="navigationbar_1item" > <a href="/bs">Bookshelf App</a> </li>
+	</ul>
+</nav>
+
+
+{% block body %}{% endblock %}
+
+
+<!--- Footer -->
+<footer>
+	<hr>
+	<div class="footer_content">
+		<img class="final_website_logo" src="/static/img/logo_2.png" alt="WEBSITE-LOGO">
+		<p> Email: koubaafiraseng@gmail.com</p> 
+		<p>Tel: (+33) 7 80 78 21 99 </p>
+		<p>Adress: Paris, France</p>	
+	</div>
+</footer> 
+
+<!--- Button that thakes the used the top of the page -->
+<button onclick="movetotop_Function()" id="top_page" title="Go to top">^<br>^</button> 
+
+<script type="text/javascript" src="/static/script.js"></script>
+
+</body>
+</html>

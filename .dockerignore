@@ -1,0 +1,5 @@
+# files and folder to be ignored and not added in the docker file
+.gitignore
+/venv
+/.git
+/.vscode

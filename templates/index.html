@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<!--- Welcome section -->
+<div class="all_projects_title">
+	Welcome to my website
+</div>
+<div class="intro">
+		<div class="intro_text">
+			<p id="intro_title">Introduction</p> 
+			<p>My name is Firas KOUBAA I am a full stack developer based in Paris.</p>
+			<p>My passion for technology has driven me to deepen my knowledge in IT and programming. 
+				Indeed, I am someone who gets happy analyzing problems and solving them by developing
+				 the adequate and logical algorithm. Versatile, I was able to acquire skills in front-end,
+				 back-end and also in deployment of web applications.
+			</p>
+			<p>This website is my portfolio that contains all the projects and the applications that I have developed.</p>
+			<p>Source codes of all my projects are available in my GitHub repository. You can go-ahead and check them out 😉.</p>
+		</div>
+		<div class="intro_right_part">
+			<div class="intro_card">
+				<img id="my_image" src="/static/img/IMG_20201104_180744.jpg" >
+				<div class="intro_card_text">
+					<p id="intro_card_title" >Firas KOUBAA</p> 
+					Engineer <br>
+					<a href="mailto:koubaafiraseng@gmail.com">koubaafiraseng@gmail.com</a> <br>
+					(+33) 780782199 <br> 
+					Paris, France 
+				</div>
+			</div>
+			<ul>
+				<div><li> <a href="/static/files/CV - Firas KOUBAA - FS Developer -1.1.pdf"  target="_blank"> <img class="external_sites" src="/static/img/cv-2.PNG" alt="CV"></a></li></div>
+				<div><li><a href=" https://www.linkedin.com/in/firas-koubaa-engineer/" target="_blank"> <img class="external_sites" src="/static/img/linkedin.png" alt="Linkedin"> </a></li></div>
+				<div><li><a href="https://github.com/firaskoubaa?tab=repositories" target="_blank"> <img class="external_sites" src="/static/img/github.PNG" alt="GitHub"> </a>	</li></div>
+			</ul>
+		</div>
+</div>
+
+
+<!--- Skills decomposition -->
+<div class="projects_section">
+	<div class="all_projects_title">
+		WHAT I DO
+	</div>
+	<div class="skills_content">
+		<div class="skill">
+			<img class="description_logo" src="/static/img/front_end.png" alt="FE"> 
+			<div class="skill_title"> Front-End</div>
+			<div class="mobile_rend_skill_descrip">Web app interface</div>
+			<hr >
+			<img id="html_css_js_logo" src="/static/img/html-css-js-3.png" alt="HTML CSS JS">
+		</div>
+		<div class="skill">
+			<img class="description_logo" src="/static/img/back-end-4.png" alt="BE">
+			<div class="skill_title">Back-End</div>
+			<div> Web app Server, Database</div> 
+			<hr >
+			<div>
+				<img id="python_flask_sql_api_logo" src="/static/img/python_flask_sql_API_2.png" alt="PYTHON+FLASK+SQL+API">
+			</div>
+		</div>
+		<div class="skill">
+			<img class="description_logo" src="/static/img/deployment.png" alt="DEPLOYMENT">
+			<div class="skill_title">Deployment</div> 
+			<div> Web app deployment</div> 
+			<hr >
+			<div>
+			<img id="aws_logo" src="/static/img/aws_all-5.PNG" alt="AWS"> 
+			</div>
+		</div>
+		<div class="skill">
+			<img class="description_logo" src="/static/img/fork.png" alt="DEPLOYMENT">
+			<div class="skill_title">Versioning</div> 
+			<div> Version control</div> 
+			<hr >
+			<div>
+			<img id="versioning_logo" src="/static/img/git_github.png" alt="Version Control"> 
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--- Developed project -->
+<div class="projects_section">
+	<div class="all_projects_title">
+		PROJECTS
+	</div>
+	<div class="projects_content">
+		<div class="project">
+			<a href="/bookshelf_app"><img src="/static/img/Bookshelf_img2.jpg" alt="Bookshelf"></a>
+			<p class="skill_title">Booskshelf App</p> 
+			<a href="/bs"> <button class="visButton">VISIT</button> </a>
+		</div>
+	</div>	
+</div>
+
+
+{% endblock %}

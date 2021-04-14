@@ -1,0 +1,444 @@
+/*Common style for all website pages*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+html {
+  scroll-behavior: smooth;
+}
+
+html,body {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  line-height: 1.5;
+  margin: 0 13px 0 10px;
+}
+
+/*///// Home page /////*/
+/* Navigation bar */
+.navigationbar{
+  /*border: 3px solid black;*/
+  display: flex; /* horizontal list*/
+  justify-content: space-between; /*item-space-item .... */
+  align-items: center;/* midlle of the height*/
+  flex-wrap: wrap;
+}
+.logo_image {
+  width: 50px;
+  height: 50px;
+  padding-top: 12px;
+  margin-left: 36px;
+  margin-bottom: 7px;
+}
+.navigationbar_items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.navigationbar_1item{
+  list-style-type: none;
+  margin: 0 20px;
+}
+.navigationbar_1item a {
+  color: rgb(128, 128, 128);
+  text-decoration: none;
+}
+.navigationbar_1item a:hover{
+  color: rgb(22, 22, 22);
+}
+.active{
+  font-weight: bold;
+}
+
+/* Welcome section */
+.intro{
+  padding: 50px 50px 25px 50px;
+  display: flex;
+  justify-content: space-around; /*item-space-item .... */
+  flex-wrap: wrap;
+}
+#intro_title{
+  font-size: 35px;
+  margin: 0%;
+}
+.intro_text{
+  width: 650px;
+  text-align: justify;
+}
+.intro ul {
+  display: flex; 
+  justify-content: space-around; 
+  padding : 10px 0% 10px 0%;
+  margin: auto;
+  height: 60px;
+  width: 300px;
+}
+.intro li{
+  padding-right: 10px;
+  list-style: none;
+}
+.intro a button:hover{
+  color: rgb(22, 22, 22);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.external_sites{
+  width: 50px;
+  height: 50px;
+  filter: opacity(70%)
+}
+.external_sites:hover {
+  filter: saturate(500%)
+
+}
+.intro_card{
+  border: 12px solid rgba(223, 223, 223, 0.479);
+  padding: 1em;
+  border-radius: 15px;
+}
+#intro_card_title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0%;
+}
+.intro_card_text{
+  font-size: 17px;
+}
+.intro_card_text a {
+  text-decoration: none;
+  color: #1E90FF;
+}
+.intro_card_text a:hover{
+  text-decoration:underline;
+  color: #035ab1;
+}
+#my_image{
+  width: 230px;
+  height: 230px;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+/*  MAIN PROJECT */
+.search_bar{
+  margin-left: auto;
+  margin-right: auto;
+}
+form{
+  height: 100px;
+  width: 85vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 70px;
+}
+#searched_keywords{
+  height: 50%;
+  width: 74%;
+  border: 3px solid rgb(97, 95, 95);
+}
+#search_submit_button {
+  height: 59%;
+  width: 23%;
+}
+#no_book_found{
+  font-size: 18px;
+  color: red;
+  display: none;
+  margin-bottom: 50px;
+}
+#search_status{
+  display: none;
+  table-layout: fixed;
+}
+table {
+  width: 85vw;
+  margin-bottom:70px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x:auto;
+}
+#empty_bs_table{
+  display: block;
+  margin: 3%;
+  border-color: red;
+  border-width: 3px;
+  border-radius: 12px;
+  table-layout: fixed;
+}
+#book_search_table{
+  display: none;
+  margin: 3%;
+  border-color: red;
+  border-width: 3px;
+  border-radius: 12px;
+}
+#bookshelf_tab{
+  display: block;
+  margin: 3%;
+  border-color: green;
+  border-width: 3px;
+  border-radius: 12px;
+}
+caption{
+  font-size: 2em;
+  padding-bottom: 30px;
+  border: none;
+}
+table, th, td{
+  border: 1px solid rgb(97, 95, 95);
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  width: 1300px;
+}
+tr img{
+  /* reference size= 128*184 ----- reduce it to 70% => 90*129px*/
+  width: 95px;
+  height: 129px;
+  border-radius: 4px;
+}
+.action_row {
+  width: 200px;
+}
+.action_row div{
+  display: flex;
+}
+.add_form,.visit_a, .delete_form{
+  width: 90px;
+  height:40px;
+  margin: auto;
+  padding: auto;
+  position: relative;
+  display: flex;
+}
+.add_button{
+  background-color:rgb(77, 168, 77);
+  }
+.delete_button{
+  background-color: rgb(255, 43, 43);
+}
+.visit_button{
+  background-color:rgba(138, 5, 138, 0.719);   
+}
+.visit_button,.delete_button,.add_button{
+  width: 90px;
+  height:40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; 
+  border-radius: 4px;
+}
+.add_button:hover{
+  filter: contrast(150%);
+}
+.delete_button:hover,.visit_button:hover{
+  filter: contrast(500%);
+}
+.to_be_hidden{
+  display: none;
+}
+.project_intro_text{
+  text-align: justify;
+}
+
+/* PROJECT PARTS BREAKDOWN */
+.all_projects_title {
+  font-size: 38px;
+  font-weight: 500;
+  padding: 20px 0;
+  background-color: rgba(223, 223, 223, 0.479);
+  text-transform: uppercase;
+  text-align:center;
+  border-radius: 12px;
+}
+.skills_content{
+  display: flex; /* horizontal list*/
+  justify-content: space-around; /*space-item-space-item-space  */
+  align-items: center;/* midlle of the height*/
+  flex-wrap: wrap;
+  margin-bottom: 75px;
+}
+.skill{
+  display: flex; /* horizontal list*/
+  justify-content: center; /*space-item-space-item-space  */
+  align-items: center;/* midlle of the height*/
+  flex-direction: column;
+  margin-top: 75px;
+}
+.skill_title {
+  font-size: 21px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0%;
+}
+.projects_section hr{
+  border: 0.1rem solid black;
+  width: 70%;
+  margin-top:30px;
+  margin-bottom: 15px;
+}
+.description_logo {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 15px;
+}
+#html_css_js_logo{
+  height: 70px;
+  width: 140px;
+} 
+#python_flask_sql_api_logo {
+  height: 70px;
+  width: 165px;
+}
+#aws_logo{
+  height: 63px;
+  width: 147px;
+}
+#versioning_logo{
+  height: 70px;
+  width: 120px;
+}
+
+
+/* Projects section */
+.projects_content{
+  margin: 75px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap;
+}
+.project{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap;
+}
+.project img{
+  width:250px;
+  height:250px;
+  margin-bottom: 10px;
+}
+.visButton{
+  width: 200px;
+  height:40px;
+  cursor: pointer; 
+  border-radius: 4px;
+  background-color:rgba(138, 5, 138, 0.719);   
+}
+
+
+
+/*///// Button that takes you to the top of the page /////*/
+#top_page {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(0, 0, 0, 0.733); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 30px; /* Increase font size */
+}
+#top_page:hover {
+  background-color: black; /* Add a dark-grey background on hover */
+}
+
+/*///// Footer /////*/
+footer{
+  background-color: rgb(59, 59, 59);
+  color: rgb(221, 221, 221);
+  padding-top: 5px ;
+  border-radius: 12px 12px 0 0 ;
+}
+footer hr{
+  border-top: 1px solid rgb(221, 221, 221);
+  width: 95%;
+}
+.footer_content{
+  display: flex; /* horizontal list*/
+  justify-content: space-around; /*space-item-space-item-space  */
+  align-items: center;/* midlle of the height*/
+  flex-wrap: wrap;
+  font-size: 17px;
+  font-weight: 500;
+}
+.final_website_logo{
+  width:  40px;
+  height: 40px;
+  padding-bottom: 5px;
+}
+footer p {
+  margin:0%;
+  padding: 0%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .logo_image {
+    width: 30px;
+    height: 30px;
+  }
+  .all_projects_title{
+    font-size: 25px;
+  }
+  .mobile_media_br{
+    display: block;
+  }
+  .intro{
+    padding: 20px;
+  }
+  #intro_title{
+    font-size: 25px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+  .project_intro_text, .intro_text{
+    font-size: 14px;
+  }
+  #intro_card_title {
+    font-size: 20px;
+  }
+  .intro_card_text{
+    font-size: 14px;
+    margin-left: 7px;
+  }
+  .intro_right_part{
+    margin-top: 25px;
+  }
+  .skills_content{
+    display: block; /* horizontal list*/
+    align-items: center;/* midlle of the height*/
+  }
+  .mobile_rend_skill_descrip{
+    font-size: 14 px;
+  }
+  .skill_title {
+    font-size: 17px;
+  }
+  .description_logo {
+    height: 60px;
+    width: 60px;
+  }
+  .projects_section hr{
+    border: 0.05rem solid black;
+    width: 50%;
+  }
+  .flip_card, .flip_card_content, .flip_card img  {
+    width: 200px;
+    height: 200px;
+  }  
+  .final_website_logo{
+    width:  30px;
+    height: 30px;
+  }
+}
