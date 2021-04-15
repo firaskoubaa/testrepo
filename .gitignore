@@ -1,2 +1,4 @@
-venv/
-.vscode/
+.gitignore
+/venv
+/.git
+/.vscode 
